@@ -7,7 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public class ResultUtil {
 	
-	public static String getJSONResult(Integer code,boolean flag,String describtion,Object data) {
+	public static String getJSONString(Integer code,boolean flag,String describtion,Object data) {
 		String result = null;
 		
 		Map<String, Object> map = new HashMap<String, Object>();
