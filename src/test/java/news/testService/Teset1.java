@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.news.NewsApplication;
+import com.news.Application;
 import com.news.entity.News;
 import com.news.mapper.NewsMapper;
 import com.news.mapper.ReaderMapper;
 import com.news.util.JedisAdapter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = NewsApplication.class)
+@SpringApplicationConfiguration(classes = Application.class)
 public class Teset1 {
 	//@Autowired
 	//private JedisAdapter jedisAdapter;

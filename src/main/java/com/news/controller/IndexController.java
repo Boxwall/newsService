@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-	@RequestMapping(path= {"/"})
+	@RequestMapping(path= {"/test"})
 	@ResponseBody
 	public String index() {
 		return "hello news";
