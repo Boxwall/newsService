@@ -20,7 +20,7 @@ public class JedisAdapter implements InitializingBean {
     }
 
     public static void main(String[] args) {
-        Jedis jedis = new Jedis();
+        Jedis jedis = new Jedis("106.12.185.87",6377);
         jedis.flushAll();
         // get,set
         jedis.set("hello", "world");
