@@ -27,7 +27,6 @@ public class CheckLogin implements HandlerInterceptor {
 			response.sendRedirect(path + "/loginpage");
 			return false;
 		} else {
-			logger.info(loginVisitor.getName() + ":" + loginVisitor.getVisitorId());
 			return true;
 		}
 	}

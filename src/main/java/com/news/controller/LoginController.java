@@ -13,7 +13,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.news.entity.Visitor;
 import com.news.util.redis.JedisAdapter;
-import com.news.util.redis.JedisUtil;
 
 @Controller
 public class LoginController {
@@ -25,8 +24,6 @@ public class LoginController {
 	
 	@RequestMapping("/login")
 	public void login(String name, String password, HttpServletRequest request,HttpServletResponse response) throws IOException {
-		
-		logger.info("name:"+name+",password:"+password);
 		
 		Visitor visitor = new Visitor();
 		
