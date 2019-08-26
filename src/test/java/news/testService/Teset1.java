@@ -14,7 +14,7 @@ import com.news.Application;
 import com.news.entity.News;
 import com.news.mapper.NewsMapper;
 import com.news.mapper.ReaderMapper;
-import com.news.util.JedisAdapter;
+import com.news.util.redis.JedisAdapter;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)

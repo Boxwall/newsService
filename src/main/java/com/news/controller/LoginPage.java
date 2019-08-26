@@ -13,20 +13,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.news.entity.Visitor;
 
 @Controller
-public class LoginController {
+public class LoginPage {
 	
 	private Logger logger = Logger.getLogger(this.getClass().getName());
 
-	@RequestMapping("/login")
-	@ResponseBody
-	public String login(String name, String password, HttpServletRequest request) {
-
-		Visitor visitor = new Visitor();
-		visitor.setName(name);
-		visitor.setVisitorId(UUID.randomUUID().toString().substring(24));
-		HttpSession session = request.getSession();
-		session.setAttribute("loginInfo", visitor);
-		return "success";
+	@RequestMapping("/loginpage")
+	public String getPage() {
+		return "login";
 	}
 
 }
