@@ -10,7 +10,7 @@
 		count(1)
 		FROM
 		<include refid="table" />
-		WHERE 1=1
+		
 
 	</select>
 
@@ -19,16 +19,17 @@
 		*
 		FROM
 		<include refid="table" />
-		WHERE 1=1
-		<if test="id != null">
-			AND id = #{id}
-		</if>
-		<if test="reader_name != null">
-			AND reader_name = #{reader_name}
-		</if>
-		<if test="nick_name != null">
-			AND nick_name = #{nick_name}
-		</if>
-			limit 1
+		<where>
+			<if test="id != null">
+				AND id = #{id}
+			</if>
+			<if test="reader_name != null">
+				AND reader_name = #{reader_name}
+			</if>
+			<if test="nick_name != null">
+				AND nick_name = #{nick_name}
+			</if>
+		</where>
+		limit 1
 	</select>
 </mapper>
