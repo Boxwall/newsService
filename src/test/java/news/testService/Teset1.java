@@ -2,6 +2,7 @@ package news.testService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 import org.junit.Test;
@@ -12,6 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.news.Application;
 import com.news.entity.News;
+import com.news.entity.Reader;
 import com.news.mapper.NewsMapper;
 import com.news.mapper.ReaderMapper;
 import com.news.util.redis.JedisAdapter;
@@ -19,8 +21,7 @@ import com.news.util.redis.JedisAdapter;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 public class Teset1 {
-	//@Autowired
-	//private JedisAdapter jedisAdapter;
+
 	@Autowired
 	private NewsMapper newsMapper;
 	@Autowired
@@ -28,10 +29,23 @@ public class Teset1 {
 	
 	@Test
 	public void demoMain() {
-//		for(int i =0;i<10;i++) {
-//			demo1();
-//		}
-		demo2();
+		long begin = System.currentTimeMillis();
+		updateReaderNickName();
+		System.out.println("耗时："+(System.currentTimeMillis()-begin)+"毫秒");
+	}
+	
+	
+	public void updateReaderNickName() {
+		Reader reader = new Reader();
+		reader.setId(3);
+		reader.seteMail("1231ewrew@qw.com");
+		reader.setNickName("nickdnameR");
+		reader.setReaderName("homeReader");
+		reader.setTopicList("1,2,3,4,5");
+		reader.setTopicTotal(5);
+		
+		System.out.println(readerMapper.updateReaderAll(reader));
+		
 	}
 	public void demo2() {
 		System.out.println("readerMapper.getReaderCount():"+readerMapper.getReaderCount());

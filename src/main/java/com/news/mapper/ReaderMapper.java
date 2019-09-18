@@ -1,5 +1,7 @@
 package com.news.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -11,6 +13,7 @@ public interface ReaderMapper {
 	String TABLE_NAME = "reader";
 	String INSERT_FIELDS ="reader_name,nick_name,e_mail,topic_total,topic_list";
 	String VALUES_FIELDS = "#{readerName},#{nickName},#{eMail},#{topicTotal},#{topicList}";
+	
 	@Insert({"insert into ",TABLE_NAME,"(",INSERT_FIELDS,") values (",VALUES_FIELDS,")"})
 	int addReader(Reader reader);	
 	
@@ -19,4 +22,12 @@ public interface ReaderMapper {
 	Integer getReaderCount();
 	
 	Integer updateReader(@Param("id") Integer id,@Param("reader_name") String readerName,@Param("nick_name") String nickName,@Param("e_mail") String eMail,@Param("topic_total")Integer topicTotal,@Param("topic_list") String topicList);
+	
+	Integer updateReaderNickName(@Param("id") Integer id,@Param("nick_name") String nickName);
+	
+	Integer updateReaderAll(@Param("reader") Reader reader);
+	
+	String getReadTopicList(@Param("id") Integer id);
+	
+	List<Integer> getAllReaderIds();
 }

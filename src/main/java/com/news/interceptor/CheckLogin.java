@@ -23,8 +23,8 @@ public class CheckLogin implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		Visitor loginVisitor = (Visitor) session.getAttribute("loginInfo");
 		if (loginVisitor == null) {
-			String path = session.getServletContext().getContextPath();
-			response.sendRedirect(path + "/loginpage");
+			//String path = session.getServletContext().getContextPath();
+			response.sendRedirect("/loginpage");
 			return false;
 		} else {
 			return true;

@@ -10,8 +10,6 @@
 		count(1)
 		FROM
 		<include refid="table" />
-		
-
 	</select>
 
 	<select id="getReader" resultType="com.news.entity.Reader">
@@ -32,4 +30,45 @@
 		</where>
 		limit 1
 	</select>
+
+	<select id="getReadTopicList" resultType="java.lang.String">
+		SELECT
+		topic_list
+		FROM
+		<include refid="table" />
+		<where>
+			id = #{id}
+		</where>
+	</select>
+
+	<select id="getAllReaderIds" resultType="java.lang.Integer">
+		SELECT
+		distinct id
+		FROM
+		<include refid="table" />
+	</select>
+
+	<update id="updateReaderNickName">
+		update
+		<include refid="table" />
+		set
+		nick_name = #{nick_name}
+		<where>
+			id = #{read.id}
+		</where>
+	</update>
+
+	<update id="updateReaderAll">
+		update
+		<include refid="table" />
+		set
+		reader_name = #{reader.readerName},
+		nick_name = #{reader.nickName},
+		e_mail = #{reader.eMail},
+		topic_total = #{reader.topicTotal},
+		topic_list = #{reader.topicList}
+		<where>
+			id = #{reader.id}
+		</where>
+	</update>
 </mapper>

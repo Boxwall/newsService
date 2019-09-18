@@ -4,11 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@RequestMapping(path = { "/home" })
 @Controller
-public class TestPage {
+public class Page1 {
 	
-	@RequestMapping(path = { "/page" })
+	@RequestMapping(path = { "/home/page1" })
 	@ResponseBody
 	public String page1() {
 		return "hello this is page1";
